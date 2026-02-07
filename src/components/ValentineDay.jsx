@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
+import bgimg from "../assets/BGIMG2.jpg"
 
 const ValentineDay = () => {
   // Icon components - Flat SVG designs (Responsive)
@@ -336,16 +337,16 @@ const ValentineDay = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring" }}
         className="relative z-10 w-full bg-white/80 backdrop-blur-xl rounded-3xl sm:rounded-[40px]
-                   shadow-[0_20px_50px_rgba(255,105,180,0.3)] border-2 sm:border-4 border-pink-200 
+                   shadow-[0_20px_50px_rgba(255,105,180,0.3)] border-2 sm:border-4 border-pink-200
                    text-center flex flex-col justify-between overflow-hidden
                    max-w-[95vw] sm:max-w-md mx-2 sm:mx-4"
         style={{
-          height: 'min(85vh, 700px)', // Responsive height
-          minHeight: '500px'
+          height: 'min(90vh, 600px)', // Better mobile height
+          minHeight: '400px'
         }}
       >
         {/* Top section - Level, Icon, Question */}
-        <div className="p-4 sm:p-6 md:p-8 flex-shrink-0">
+        <div className="p-3 sm:p-6 md:p-8 shrink-0">
           {/* Level indicator */}
           <motion.div
             key={currentLevel}
@@ -353,7 +354,7 @@ const ValentineDay = () => {
             animate={{ scale: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 200 }}
             className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-pink-100 to-rose-100
-                       text-pink-600 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4 
+                       text-pink-600 rounded-full text-xs sm:text-sm font-bold mb-2 sm:mb-4 
                        uppercase tracking-widest shadow-sm"
             style={customFontStyle}
           >
@@ -366,9 +367,9 @@ const ValentineDay = () => {
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
-            className="flex justify-center items-center animate-pulse mb-3 sm:mb-4"
+            className="flex justify-center items-center animate-pulse mb-2 sm:mb-4"
           >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center">
               {questions[currentLevel].icon}
             </div>
           </motion.div>
@@ -379,7 +380,7 @@ const ValentineDay = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-800 leading-tight px-2"
+            className="text-lg sm:text-2xl md:text-3xl font-extrabold text-gray-800 leading-tight px-2"
             style={customFontStyle}
           >
             {questions[currentLevel].q}
@@ -389,10 +390,19 @@ const ValentineDay = () => {
         {/* Bottom section - Buttons container - Responsive */}
         <div
           ref={containerRef}
-          className="relative flex-1 flex justify-center items-center p-3 sm:p-4"
+          className="relative flex-1 flex justify-center items-center  "
+          // style={{
+
+
+          // }}
+
           style={{
             width: '100%',
-            minHeight: '150px'
+            // minHeight: '120px',
+            backgroundImage: `url(${bgimg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           {/* YES button - Responsive sizing */}
