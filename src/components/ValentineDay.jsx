@@ -4,15 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 
 const ValentineDay = () => {
-  // Icon components - Flat SVG designs
+  // Icon components - Flat SVG designs (Responsive)
   const HeartIcon = () => (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none">
       <path d="M60 100L20 65C10 55 10 40 20 30C30 20 45 20 55 30L60 35L65 30C75 20 90 20 100 30C110 40 110 55 100 65L60 100Z" fill="#FF6B9D" stroke="#FF1744" strokeWidth="3" />
     </svg>
   );
 
   const DinnerIcon = () => (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none">
       <path d="M30 70C30 70 35 90 60 90C85 90 90 70 90 70L85 50H35L30 70Z" fill="#FFB3BA" stroke="#FF1744" strokeWidth="3" />
       <ellipse cx="60" cy="50" rx="25" ry="8" fill="#FF6B9D" stroke="#FF1744" strokeWidth="2" />
       <path d="M45 50C45 50 50 60 60 60C70 60 75 50 75 50" stroke="#FF1744" strokeWidth="2" fill="none" />
@@ -23,7 +23,7 @@ const ValentineDay = () => {
   );
 
   const GiftIcon = () => (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none">
       <rect x="35" y="50" width="50" height="40" fill="#FFB3BA" stroke="#FF1744" strokeWidth="3" />
       <rect x="30" y="40" width="60" height="15" fill="#FF6B9D" stroke="#FF1744" strokeWidth="3" />
       <path d="M60 40V90" stroke="#FF1744" strokeWidth="4" />
@@ -34,7 +34,7 @@ const ValentineDay = () => {
   );
 
   const HandIcon = () => (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none">
       <path d="M35 60C35 60 40 50 45 55L50 60L55 55C60 50 65 55 65 60L70 65L75 60C80 55 85 60 85 65L80 75C80 75 75 85 60 85C45 85 40 75 40 75L35 65V60Z" fill="#FFB3BA" stroke="#FF1744" strokeWidth="3" />
       <circle cx="45" cy="50" r="6" fill="#FF6B9D" />
       <circle cx="60" cy="48" r="6" fill="#FF6B9D" />
@@ -44,7 +44,7 @@ const ValentineDay = () => {
   );
 
   const StarIcon = () => (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none">
       <circle cx="60" cy="60" r="40" fill="#FFE5E5" stroke="#FF6B9D" strokeWidth="3" />
       <circle cx="48" cy="52" r="5" fill="#FF1744" />
       <circle cx="72" cy="52" r="5" fill="#FF1744" />
@@ -57,7 +57,7 @@ const ValentineDay = () => {
   );
 
   const PuzzleIcon = () => (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none">
       <rect x="30" y="30" width="30" height="30" fill="#FFB3BA" stroke="#FF1744" strokeWidth="3" />
       <rect x="60" y="30" width="30" height="30" fill="#FF6B9D" stroke="#FF1744" strokeWidth="3" />
       <rect x="30" y="60" width="30" height="30" fill="#FF6B9D" stroke="#FF1744" strokeWidth="3" />
@@ -68,7 +68,7 @@ const ValentineDay = () => {
   );
 
   const LoveIcon = () => (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none">
       <circle cx="60" cy="60" r="40" fill="#FFE5E5" stroke="#FF6B9D" strokeWidth="3" />
       <path d="M45 55C45 55 50 50 55 55C60 60 60 60 60 60C60 60 60 60 65 55C70 50 75 55 75 55" stroke="#FF1744" strokeWidth="3" fill="none" />
       <path d="M45 70C45 70 55 80 60 80C65 80 75 70 75 70" stroke="#FF1744" strokeWidth="4" strokeLinecap="round" fill="none" />
@@ -76,7 +76,7 @@ const ValentineDay = () => {
   );
 
   const RingIcon = () => (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none">
       <circle cx="60" cy="65" r="25" fill="none" stroke="#FF6B9D" strokeWidth="6" />
       <path d="M60 40L50 55L70 55L60 40Z" fill="#FFB3BA" stroke="#FF1744" strokeWidth="3" />
       <circle cx="60" cy="40" r="8" fill="#FFE5E5" stroke="#FF6B9D" strokeWidth="2" />
@@ -304,7 +304,7 @@ const ValentineDay = () => {
   const onNoHover = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (!noEscaping) setNoEscaping(true); // Activate escaping mode
+    if (!noEscaping) setNoEscaping(true);
     playSound('hover');
     moveNoButton();
   };
@@ -313,7 +313,7 @@ const ValentineDay = () => {
   const onNoClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (!noEscaping) setNoEscaping(true); // Activate escaping mode
+    if (!noEscaping) setNoEscaping(true);
     playSound('noClick');
     moveNoButton();
   };
@@ -330,77 +330,88 @@ const ValentineDay = () => {
         {hearts.map((h) => <FloatingHeart key={h.id} heart={h} />)}
       </div>
 
-      {/* Main card - 80vh height */}
+      {/* Main card - Fully responsive */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring" }}
-        className="relative z-10 w-full max-w-md bg-white/80 backdrop-blur-xl rounded-[40px]
-                   shadow-[0_20px_50px_rgba(255,105,180,0.3)] border-4 border-pink-200 text-center mx-4 
-                   flex flex-col justify-between overflow-hidden"
-        style={{ height: '80vh' }}
+        className="relative z-10 w-full bg-white/80 backdrop-blur-xl rounded-3xl sm:rounded-[40px]
+                   shadow-[0_20px_50px_rgba(255,105,180,0.3)] border-2 sm:border-4 border-pink-200 
+                   text-center flex flex-col justify-between overflow-hidden
+                   max-w-[95vw] sm:max-w-md mx-2 sm:mx-4"
+        style={{
+          height: 'min(85vh, 700px)', // Responsive height
+          minHeight: '500px'
+        }}
       >
-        {/* Top section - Level, Emoji, Question */}
-        <div className="p-6 sm:p-8">
+        {/* Top section - Level, Icon, Question */}
+        <div className="p-4 sm:p-6 md:p-8 flex-shrink-0">
           {/* Level indicator */}
           <motion.div
             key={currentLevel}
             initial={{ scale: 0.5, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="inline-block px-4 py-2 bg-gradient-to-r from-pink-100 to-rose-100
-                       text-pink-600 rounded-full text-sm font-bold mb-4 uppercase tracking-widest shadow-sm"
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-pink-100 to-rose-100
+                       text-pink-600 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4 
+                       uppercase tracking-widest shadow-sm"
             style={customFontStyle}
           >
             {questions[currentLevel].l}
           </motion.div>
 
-          {/* Icon */}
+          {/* Icon - Responsive size */}
           <motion.div
             key={`icon-${currentLevel}`}
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
-            className="flex justify-center items-center mb-4"
+            className="flex justify-center items-center animate-pulse mb-3 sm:mb-4"
           >
-            {questions[currentLevel].icon}
+            <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center">
+              {questions[currentLevel].icon}
+            </div>
           </motion.div>
 
-          {/* Question */}
+          {/* Question - Responsive text */}
           <motion.h1
             key={`question-${currentLevel}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl sm:text-3xl font-extrabold text-gray-800 leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-800 leading-tight px-2"
             style={customFontStyle}
           >
             {questions[currentLevel].q}
           </motion.h1>
         </div>
 
-        {/* Bottom section - Buttons container */}
+        {/* Bottom section - Buttons container - Responsive */}
         <div
           ref={containerRef}
-          className="relative flex-1 flex justify-center items-center p-4"
+          className="relative flex-1 flex justify-center items-center p-3 sm:p-4"
           style={{
             width: '100%',
-            minHeight: '200px'
+            minHeight: '150px'
           }}
         >
-          {/* YES button - stays in center */}
+          {/* YES button - Responsive sizing */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleYesClick}
             onMouseEnter={onYesHover}
-            className="px-8 py-3 bg-gradient-to-r from-red-400 via-rose-400 to-pink-400
-                       text-white font-bold rounded-2xl shadow-lg shadow-pink-300/50
-                       hover:shadow-xl hover:shadow-pink-300/70 transition-all duration-300 
-                       min-w-[120px] relative z-10"
+            className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-4 
+                       bg-gradient-to-r from-red-400 via-rose-400 to-pink-400
+                       text-white font-bold rounded-xl sm:rounded-2xl 
+                       shadow-lg shadow-pink-300/50
+                       hover:shadow-xl hover:shadow-pink-300/70 
+                       transition-all duration-300 
+                       min-w-[100px] sm:min-w-[120px] md:min-w-[140px] 
+                       relative z-10"
             style={customFontStyle}
           >
-            <span className="text-lg sm:text-xl">
+            <span className="text-base sm:text-lg md:text-xl">
               {gameCompleted ? (
                 <span>
                   I LOVE YOU! <span className="animate-pulse">💕</span>
@@ -413,7 +424,7 @@ const ValentineDay = () => {
             </span>
           </motion.button>
 
-          {/* NO button - starts in row, then jumps when escaping */}
+          {/* NO button - Responsive sizing */}
           {!gameCompleted && (
             <motion.button
               ref={noBtnRef}
@@ -421,24 +432,26 @@ const ValentineDay = () => {
               onClick={onNoClick}
               animate={noEscaping ? { x: noPos.x, y: noPos.y } : { x: 0, y: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="px-6 py-3 bg-gradient-to-r from-gray-100 to-gray-200
-                         text-gray-500 font-bold rounded-2xl border-2 border-gray-300
+              className="px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 
+                         bg-gradient-to-r from-gray-100 to-gray-200
+                         text-gray-500 font-bold rounded-xl sm:rounded-2xl 
+                         border-2 border-gray-300
                          shadow-lg cursor-pointer"
               style={{
                 ...customFontStyle,
-                minWidth: "100px",
+                minWidth: "80px",
                 position: noEscaping ? "absolute" : "relative",
                 left: noEscaping ? 0 : "auto",
                 top: noEscaping ? 0 : "auto",
-                marginLeft: noEscaping ? 0 : '1rem'
+                marginLeft: noEscaping ? 0 : '0.5rem'
               }}
             >
-              <span className="text-lg">No 😢</span>
+              <span className="text-base sm:text-lg md:text-xl">No 😢</span>
             </motion.button>
           )}
         </div>
 
-        {/* Game completion overlay */}
+        {/* Game completion overlay - Responsive */}
         <AnimatePresence>
           {gameCompleted && (
             <motion.div
@@ -447,20 +460,21 @@ const ValentineDay = () => {
               exit={{ opacity: 0, scale: 0.5 }}
               transition={{ duration: 0.5 }}
               className="absolute inset-0 flex flex-col items-center justify-center
-                         bg-gradient-to-br from-pink-500/30 to-red-500/30 backdrop-blur-sm rounded-[40px]"
+                         bg-gradient-to-br from-pink-500/80 to-red-500/80 backdrop-blur-sm 
+                         rounded-3xl sm:rounded-[40px] p-4 sm:p-6"
             >
-              <div className="text-8xl mb-6">🥰</div>
+              <div className="text-6xl sm:text-7xl md:text-8xl mb-4 sm:mb-6 animate-bounce">🥰</div>
               <h2
-                className="text-4xl font-extrabold text-transparent bg-clip-text 
-                           bg-gradient-to-r from-pink-600 to-red-600 mb-4"
+                className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text 
+                           bg-gradient-to-r from-pink-50 to-red-50 mb-3 sm:mb-4 px-4"
                 style={customFontStyle}
               >
                 YAY! 🎉
               </h2>
-              <p className="text-2xl text-pink-700 font-bold mb-2" style={customFontStyle}>
+              <p className="text-xl sm:text-2xl md:text-3xl text-pink-50 font-bold mb-2 px-4 text-center" style={customFontStyle}>
                 You made me the happiest! 💖
               </p>
-              <p className="text-lg text-pink-600" style={customFontStyle}>
+              <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-pink-50 px-4 text-center" style={customFontStyle}>
                 Happy Valentine&apos;s Day! ❤️
               </p>
             </motion.div>
